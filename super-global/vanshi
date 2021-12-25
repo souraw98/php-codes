@@ -1,0 +1,50 @@
+<?php 
+
+echo 'This is Vanshi Terminal';
+echo PHP_EOL;
+echo 'The Vanshi framework : version 1.x';
+
+echo PHP_EOL;
+
+$commands=[
+'--help' => 'This is Help Command',
+'--v' => '1.x',
+'--a' => 'for Addition',
+'--s' => 'for Substraction',
+'--m' => 'for Multiplication',
+'--d' => 'for division',
+'--r' => 'for remainder',
+];
+
+foreach($commands as $key => $value){
+
+	printf("%s\t\t:\t\t%s\n",$key,$value);
+
+}
+
+$output='';
+
+if(isset($argv[1])){
+		$command=$argv[1];
+		echo "\e[H\e[J";
+		switch($command){
+
+		case '--v' :
+       				$output='1.x'; 
+       		break;
+
+		case '--a' :
+				$x=readline("Enter First Number : ");
+				$y=readline("Enter Second Number : ");
+				$output=$x+$y;
+		break;
+		
+
+		default	:
+				$output='Invalid command supplied';
+		break;
+		}
+
+}
+
+echo $output;

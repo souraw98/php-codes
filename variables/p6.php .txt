@@ -1,0 +1,14 @@
+<?php
+
+//wap in php to assign the array to variable
+
+$color[0]='red';
+$color[1]='green';
+$color[2]='orange';
+$color[3]='navy';
+
+echo getType($color);
+echo PHP_EOL;
+print_r($color);
+
+?>
